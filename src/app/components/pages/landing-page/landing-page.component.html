@@ -1,52 +1,75 @@
 <app-header></app-header>
 
 <!-- Hero -->
-<section id="hero" class="relative py-16 md:py-24 overflow-hidden bg-gradient-to-br from-[#2a1810] via-[#1a0f0a] to-black">
+<section id="hero" class="relative h-full flex items-center justify-center md:py-10 overflow-hidden bg-neutral-100">
+  <!-- Clipped path-->
+  <div class="absolute inset-0 bg-neutral-50"></div>
+
+  <div class="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-orange-500 to-orange-500 [clip-path:polygon(60%_0,_100%_0,_100%_100%,_40%_100%)]"></div>
 
 
-
-  <div class="relative z-10 max-w-7xl mx-auto px-6">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+  <div class="w-full h-full relative z-10 max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center border border-red-200">
+      
       <!-- Text Content -->
       <div class="text-left">
-        <h1 class="font-bold text-5xl md:text-6xl lg:text-7xl leading-tight" style="font-family: 'Georgia', serif;">
-          <span class="text-white">Craving a</span><br/>
-          <span class="text-white">Juicy Burger?</span><br/>
+        <h1 class="font-bold text-5xl md:text-6xl lg:text-7xl leading-tight font-serif">
+          <span class="text-black">Craving a</span><br/>
+          <span class="text-black">Juicy Burger?</span><br/>
         </h1>
 
         <p class="mt-6 text-gray-300 text-sm md:text-base max-w-md">
-          Welcome to <span class="font-semibold text-orange-400">Jarg's Kitchen</span> — handcrafted burgers, premium sides,
-          and a warm atmosphere for everyone.
+          Taste <span class="font-semibold text-orange-400">one of the best</span> handcrafted burgers at Mabalacat City.
         </p>
+        <button class="bg-orange-500 hover:bg-orange-700 text-white mt-5 py-2 px-4 rounded">
+          Make Order
+        </button>
+      </div>
 
-        <div class="mt-8 flex gap-4">
-          <a
-            routerLink="/menu"
-            class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 px-8 py-3 text-sm md:text-base font-bold text-white shadow-2xl hover:scale-105 transform transition focus:outline-none focus:ring-4 focus:ring-orange-500/50"
-            aria-label="Order now"
-          >
-            Menu
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
+      <!-- Burger Image -->
+      <div class="relative z-10">
+        <img
+          src="images/burger2.png"
+          alt="Signature burger"
+          class="w-full h-[800px] object-cover"
+        />
+        <div class="absolute inset-0 bg-gradient-to-br from-red-500 to-orange-400 rounded-full blur-3xl opacity-20 -z-10"></div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+<!-- Visual + blurb -->
+<section class="py-16 md:py-24 bg-white relative overflow-hidden">
+
+
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      <!-- Image with decorations -->
+      <div class="relative order-2 md:order-1">
+        <div class="rounded-3xl overflow-hidden shadow-2xl transform hover:rotate-1 transition duration-500 bg-gradient-to-br from-[#151617] to-[#0f1113] border border-white/5">
+          <img
+            src="public/hero-burger-dark.jpg"
+            alt="Signature burger on wooden board"
+            class="w-full h-72 object-cover"
+            loading="lazy"
+          />
 
         </div>
       </div>
 
-      <!-- Burger Image -->
-      <div class="relative">
-        <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition duration-500">
-          <img
-            src="/jargs-kitchen/src/app/components/shared/asset/burger_hero.jpg"
-            alt="Signature burger"
-            class="w-full h-96 object-cover"
-            loading="lazy"
-          />
-        </div>
-        <!-- Glow effect behind image -->
-        <div class="absolute inset-0 bg-gradient-to-br from-orange-500 to-yellow-400 rounded-3xl blur-3xl opacity-30 -z-10"></div>
-        
+      <!-- Text Content -->
+      <div class="order-1 md:order-2 text-gray-900">
+        <h3 class="text-sm uppercase tracking-wider text-orange-500 font-semibold">What we do</h3>
+        <div class="mt-3 w-24 h-1 rounded-full bg-gradient-to-r from-orange-500 to-yellow-500"></div>
+
+        <p class="mt-6 text-base leading-relaxed text-gray-700">
+          We craft premium burgers using time-honored techniques and fresh ingredients. Our menu balances bold flavors
+          with approachable choices so everyone finds something to love.
+        </p>
+
       </div>
     </div>
   </div>
@@ -62,7 +85,7 @@
       <div class="relative order-2 md:order-1">
         <div class="rounded-3xl overflow-hidden shadow-2xl transform hover:rotate-1 transition duration-500 bg-gradient-to-br from-[#151617] to-[#0f1113] border border-white/5">
           <img
-            src="/assets/hero-burger-dark.jpg"
+            src="public/hero-burger-dark.jpg"
             alt="Signature burger on wooden board"
             class="w-full h-72 object-cover"
             loading="lazy"
