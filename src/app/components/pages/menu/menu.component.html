@@ -1,39 +1,174 @@
 
-<section id="menu" class="py-16 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-4">
-    <h2 class="text-4xl font-bold text-center mb-4">Our Menu</h2>
-    <p class="text-center text-gray-600 mb-12">Choose your favorites</p>
+<div class="bg-neutral-50 py-16">
+    <div class="max-w-7xl mx-auto px-4">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-3">Our Menu</h2>
+            <p class="text-gray-600 text-lg">Handcrafted burgers made fresh daily</p>
+        </div>
 
-    <!-- Category Tabs -->
-    <div class="flex justify-center gap-4 mb-12">
-      <button 
-        (click)="selectedCategory.set('burger')"
-        [class.bg-red-600]="selectedCategory() === 'burger'"
-        [class.text-white]="selectedCategory() === 'burger'"
-        [class.bg-white]="selectedCategory() !== 'burger'"
-        [class.text-gray-700]="selectedCategory() !== 'burger'"
-        class="px-8 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all">
-        🍔 Burgers
-      </button>
-      <button 
-        (click)="selectedCategory.set('fries')"
-        [class.bg-red-600]="selectedCategory() === 'fries'"
-        [class.text-white]="selectedCategory() === 'fries'"
-        [class.bg-white]="selectedCategory() !== 'fries'"
-        [class.text-gray-700]="selectedCategory() !== 'fries'"
-        class="px-8 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all">
-        🍟 Fries
-      </button>
+        <!-- Menu Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+            <!-- Card 1 -->
+            <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                <div class="relative overflow-hidden bg-neutral-100 h-56">
+                    <img class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-300" 
+                         src="images/burger2.png"
+                         alt="Classic Burger">
+                    <div class="absolute top-3 right-3 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        Best Seller
+                    </div>
+                </div>
+                <div class="p-5">
+                    <h3 class="text-xl font-bold text-gray-900">Classic Burger</h3>
+                    <p class="text-gray-600 text-sm mt-2 line-clamp-2">
+                        Juicy beef patty with fresh lettuce, tomatoes, and our special sauce
+                    </p>
+                    <div class="flex items-center justify-between mt-5">
+                        <span class="text-orange-500 font-bold text-2xl">₱150</span>
+                        <button class="bg-orange-500 hover:bg-orange-600 text-white py-2 px-5 rounded-lg font-medium transition-colors">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                <div class="relative overflow-hidden bg-neutral-100 h-56">
+                    <img class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-300" 
+                         src="images/burger2.png"
+                         alt="Cheese Burger">
+                </div>
+                <div class="p-5">
+                    <h3 class="text-xl font-bold text-gray-900">Cheese Deluxe</h3>
+                    <p class="text-gray-600 text-sm mt-2 line-clamp-2">
+                        Double cheese, crispy bacon, and caramelized onions
+                    </p>
+                    <div class="flex items-center justify-between mt-5">
+                        <span class="text-orange-500 font-bold text-2xl">₱180</span>
+                        <button class="bg-orange-500 hover:bg-orange-600 text-white py-2 px-5 rounded-lg font-medium transition-colors">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                <div class="relative overflow-hidden bg-neutral-100 h-56">
+                    <img class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-300" 
+                         src="images/burger2.png"
+                         alt="BBQ Burger">
+                    <div class="absolute top-3 right-3 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        Spicy
+                    </div>
+                </div>
+                <div class="p-5">
+                    <h3 class="text-xl font-bold text-gray-900">BBQ Special</h3>
+                    <p class="text-gray-600 text-sm mt-2 line-clamp-2">
+                        Smoky BBQ sauce, crispy onion rings, and jalapeños
+                    </p>
+                    <div class="flex items-center justify-between mt-5">
+                        <span class="text-orange-500 font-bold text-2xl">₱165</span>
+                        <button class="bg-orange-500 hover:bg-orange-600 text-white py-2 px-5 rounded-lg font-medium transition-colors">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                <div class="relative overflow-hidden bg-neutral-100 h-56">
+                    <img class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-300" 
+                         src="images/burger2.png"
+                         alt="Mushroom Burger">
+                </div>
+                <div class="p-5">
+                    <h3 class="text-xl font-bold text-gray-900">Mushroom Swiss</h3>
+                    <p class="text-gray-600 text-sm mt-2 line-clamp-2">
+                        Sautéed mushrooms, Swiss cheese, and garlic aioli
+                    </p>
+                    <div class="flex items-center justify-between mt-5">
+                        <span class="text-orange-500 font-bold text-2xl">₱170</span>
+                        <button class="bg-orange-500 hover:bg-orange-600 text-white py-2 px-5 rounded-lg font-medium transition-colors">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                <div class="relative overflow-hidden bg-neutral-100 h-56">
+                    <img class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-300" 
+                         src="images/burger2.png"
+                         alt="Bacon Burger">
+                    <div class="absolute top-3 right-3 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        New
+                    </div>
+                </div>
+                <div class="p-5">
+                    <h3 class="text-xl font-bold text-gray-900">Bacon Crunch</h3>
+                    <p class="text-gray-600 text-sm mt-2 line-clamp-2">
+                        Extra crispy bacon, cheddar, and ranch dressing
+                    </p>
+                    <div class="flex items-center justify-between mt-5">
+                        <span class="text-orange-500 font-bold text-2xl">₱175</span>
+                        <button class="bg-orange-500 hover:bg-orange-600 text-white py-2 px-5 rounded-lg font-medium transition-colors">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                <div class="relative overflow-hidden bg-neutral-100 h-56">
+                    <img class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-300" 
+                         src="images/burger2.png"
+                         alt="Veggie Burger">
+                </div>
+                <div class="p-5">
+                    <h3 class="text-xl font-bold text-gray-900">Veggie Delight</h3>
+                    <p class="text-gray-600 text-sm mt-2 line-clamp-2">
+                        Plant-based patty with avocado and fresh vegetables
+                    </p>
+                    <div class="flex items-center justify-between mt-5">
+                        <span class="text-orange-500 font-bold text-2xl">₱140</span>
+                        <button class="bg-orange-500 hover:bg-orange-600 text-white py-2 px-5 rounded-lg font-medium transition-colors">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                <div class="relative overflow-hidden bg-neutral-100 h-56">
+                    <img class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-300" 
+                         src="images/burger2.png"
+                         alt="Premium Burger">
+                    <div class="absolute top-3 right-3 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        Premium
+                    </div>
+                </div>
+                <div class="p-5">
+                    <h3 class="text-xl font-bold text-gray-900">Gourmet Supreme</h3>
+                    <p class="text-gray-600 text-sm mt-2 line-clamp-2">
+                        Wagyu beef, truffle aioli, and arugula
+                    </p>
+                    <div class="flex items-center justify-between mt-5">
+                        <span class="text-orange-500 font-bold text-2xl">₱250</span>
+                        <button class="bg-orange-500 hover:bg-orange-600 text-white py-2 px-5 rounded-lg font-medium transition-colors">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
-
-    <!-- Menu Items Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      @for (item of filteredItems(); track item.id) {
-        <app-menu-item-card 
-          [item]="item"
-          (addToCart)="addToCart($event)">
-        </app-menu-item-card>
-      }
-    </div>
-  </div>
-
+</div>
