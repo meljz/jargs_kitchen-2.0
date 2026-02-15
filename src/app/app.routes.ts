@@ -51,5 +51,11 @@ export const routes: Routes = [
           import('./components/pages/auth/register/register.component').then(m => m.RegisterComponent),
       },
     ]
+  },
+
+  // Wildcard route - redirect unknown paths to home
+  {
+    path: '**',
+    redirectTo: ''
   }
 ];
