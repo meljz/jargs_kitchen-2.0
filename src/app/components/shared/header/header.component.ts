@@ -12,6 +12,15 @@ import { RouterLink, RouterModule } from '@angular/router';
 })
 export class HeaderComponent {
   @Output() toggleCart = new EventEmitter<void>();
+  isMobileMenuOpen = false;
 
   constructor(public cartService: CartService) {}
+
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  closeMobileMenu() {
+    this.isMobileMenuOpen = false;
+  }
 }
