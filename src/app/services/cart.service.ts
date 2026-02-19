@@ -16,6 +16,7 @@ export class CartService {
   );
 
   addToCart(item: MenuItem): void {
+    alert('Added to cart!')
     const currentCart = this.cartItems();
     const existingIndex = currentCart.findIndex(i => i.id === item.id);
 
@@ -44,6 +45,7 @@ export class CartService {
       this.cartItems.set(currentCart.filter(i => i.id !== itemId));
     }
   }
+  
 
   clearCart(): void {
     this.cartItems.set([]);

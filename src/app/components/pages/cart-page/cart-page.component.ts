@@ -1,14 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
-import { RouterLink, RouterModule} from "@angular/router";
+import { Component, inject } from '@angular/core';
+import { RouterLink, RouterModule } from "@angular/router";
+import { CartService } from '../../../services/cart.service';
+import { CartItem } from '../../../models/menu-item.model';
 
-export interface CartItem {
-  id: number;
-  name: string;
-  price: number;
-  quantity: number;
-  image: string;
-}
+
 
 @Component({
   selector: 'cart-page',
@@ -16,15 +12,16 @@ export interface CartItem {
   imports: [CommonModule, RouterLink, RouterModule],
   templateUrl: './cart-page.component.html',
   styleUrls: ['./cart-page.component.css'],
-  })
-  export class CartComponent {
-  @Input() cartItems: CartItem[] = [];
+})
+export class CartPageComponent {
+  private cartService = inject(CartService);
+  
+  cartItems = this.cartService.cart;   // signal
+  cartCount = this.cartService.cartCount;
 
-  cartCount: number = 0;
 
-  // Calculated values
   get subtotal(): number {
-    return this.cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    return this.cartService.cartTotal();
   }
 
   get deliveryFee(): number {
@@ -39,17 +36,23 @@ export interface CartItem {
     return this.subtotal + this.deliveryFee + this.tax;
   }
 
-  navigateTo(page: string) {
-    console.log(`Navigate to ${page}`);
-    // Replace with router navigation if needed
+  updateQuantity(item: CartItem, newQty: number) {
+    const currentQty = item.quantity;
+    if (newQty > currentQty) {
+      // Add more items
+      for (let i = 0; i < newQty - currentQty; i++) {
+        this.cartService.addToCart(item);
+      }
+    } else if (newQty < currentQty) {
+      // Remove items
+      for (let i = 0; i < currentQty - newQty; i++) {
+        this.cartService.removeFromCart(item.id);
+      }
+    }
   }
 
-  updateQuantity(item: CartItem, newQty: number) {
-    if (newQty < 1) return;
-    item.quantity = newQty;
-  }
 
   removeItem(item: CartItem) {
-    this.cartItems = this.cartItems.filter((i) => i.id !== item.id);
+    this.cartService.removeFromCart(item.id);
   }
 }

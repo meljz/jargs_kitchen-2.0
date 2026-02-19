@@ -10,33 +10,44 @@
   <div
     class="relative z-20 w-full md:w-1/2 flex flex-col justify-center px-6 sm:px-12 lg:px-20 py-12 md:py-0 order-2 md:order-1"
   >
+ <span
+  class="inline-block
+         text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500
+         animate-[slideInLeft_0.8s_ease-out_forwards]"
+>
     <span
-      class="inline-block w-72 py-1 px-3 border border-yellow-600 text-yellow-600 font-heading tracking-widest text-lg mb-6 rounded"
+      class="inline-block w-72 py-1 px-3 border border-yellow-600  text-yellow-600 font-heading tracking-widest text-lg mb-6 rounded"
     >
-      EST. 2026 • Jargs Kitchen
+      EST. 2025 • Jargs Kitchen
     </span>
 
     <h1
-      class="text-6xl sm:text-7xl lg:text-8xl font-heading text-black leading-[0.9] mb-6"
+      class="text-6xl font-bold sm:text-7xl lg:text-8xl font-heading text-black leading-[0.9] mb-6"
     >
-      BURGERS THAT <br />
+      JUICIEST BURGER THAT<br />
       <span
         class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500"
       >
-        HIT DIFFERENT
+        HITS DIFFERENT
       </span>
     </h1>
 
     <p
-      class="text-gray-400 text-lg sm:text-xl max-w-md mb-10 font-body leading-relaxed"
+      class="text-gray-700 text-lg sm:text-xl max-w-md mb-10 font-body leading-relaxed"
     >
-      Handcrafted with love, served with attitude. The freshest ingredients, the
-      boldest flavors, right here on your block.
+      Taste one of the best handcrafted burgers in Mabalacat City, Pampanga — fresh, juicy, and affordable.
     </p>
-
+  </span>
+    
+ <span
+  class="inline-block
+         text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500
+         animate-[slideInRight_0.8s_ease-out_forwards]"
+>
     <div class="flex flex-wrap gap-4">
       <button
         class="bg-yellow-400 text-gray-900 font-heading text-xl px-8 py-4 rounded hover:bg-white transition-colors flex items-center gap-2 group"
+        routerLink="menu"
       >
         ORDER NOW
         <!-- Inline SVG for ArrowRight -->
@@ -50,12 +61,9 @@
           <path d="M5 12h14M12 5l7 7-7 7" />
         </svg>
       </button>
-      <button
-        class="border-2 border-white/20 text-white font-heading text-xl px-8 py-4 rounded hover:bg-white/10 transition-colors"
-      >
-        VIEW MENU
-      </button>
+      
     </div>
+ </span>
   </div>
 
   <!-- Right Content -->
@@ -75,95 +83,11 @@
     </div>
   </div>
 </section>
-<!--
-<header
-  id="hero"
-  class="relative h-screen flex items-center justify-center overflow-hidden md:py-10 sm:h-[80vh] xs:h-[70vh]"
->
-  <div class="absolute inset-0">
-    <img
-      src="/images/heroBurger.jpg"
-      alt="Handcrafted juicy burger from Jarg’s Kitchen in Mabalacat City Pampanga"
-      class="w-full h-full object-cover"
-    />
-  </div>
 
-  <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-end">
-      <div class="space-y-4 sm:space-y-6 text-right max-w-lg ml-auto">
-        <h1
-          class="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight"
-        >
-          Crave the Ultimate Juicy Burger in Mabalacat City?
-        </h1>
-
-        <p class="text-lg sm:text-xl text-white leading-relaxed">
-          Taste one of the
-          <strong class="text-amber-300">best handcrafted burgers</strong>
-          in Mabalacat City, Pampanga — fresh, juicy, and affordable.
-        </p>
-
-        <div class="flex justify-end">
-          <a
-            routerLink="menu"
-            class="bg-amber-600 text-white font-medium px-7 py-3 rounded-xl text-base shadow-lg hover:shadow-amber-500/20 hover:scale-102 transition-all duration-200"
-          >
-            Order Burger Now
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
--->
-
-<!-- FEATURED BURGER SECTION -->
-<!--
-<section
-  class="bg-amber-500 border-t border-gray-300"
-  aria-labelledby="best-seller"
->
-  <div class="grid grid-cols-1 lg:grid-cols-2 h-[600px] lg:h-[550px]">
-    <div class="relative overflow-hidden">
-      <img
-        src="/images/burger.jpg"
-        alt="Jarg’s Double Patty Burger best seller in Mabalacat City Pampanga"
-        class="absolute inset-0 w-full h-full object-cover"
-      />
-    </div>
-
-    <div class="bg-slate-200 flex items-center">
-      <div class="m-8 space-y-6">
-        <h2 id="best-seller" class="font-semibold text-4xl lg:text-5xl">
-          Best Seller Burger
-        </h2>
-
-        <h3 class="text-2xl lg:text-3xl font-medium">
-          Jarg’s Double Patty Burger
-        </h3>
-
-        <p class="text-lg max-w-lg">
-          Freshly grilled, handcrafted daily using premium ingredients — loved
-          by locals in Mabalacat City.
-        </p>
-
-        <a
-          routerLink="menu"
-          class="inline-block bg-amber-600 text-white px-4 py-2 rounded-full shadow-lg hover:scale-102 transition"
-        >
-          View Full Menu
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
--->
-
-<!-- DIVIDER -->
-<section class="bg-yellow-500 py-20">
+<section class="bg-black py-20">
   <div class="max-w-7xl mx-auto px-6">
     <ul
-      class="grid grid-cols-1 sm:grid-cols-3 gap-10 text-center text-black text-2xl font-medium"
+      class="grid grid-cols-1 sm:grid-cols-3 gap-10 font-heading text-3xl font-bold text-center text-yellow-400  text-2xl font-medium"
     >
       <li>Tasty & Juicy Burgers</li>
       <li>Mabalacat City’s Favorite Burger Spot</li>
@@ -172,18 +96,26 @@
   </div>
 </section>
 
-<section id="menu" class="py-24 bg-olive-200 relative">
+<section id="menu" class="py-24 bg-neutral-100  relative">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
+       <span
+  class="inline-block
+         text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500
+         animate-[slideInBottom_0.8s_ease-out_forwards]"
+>
       <h2
-        class="text-5xl md:text-6xl font-heading text-black mb-4 relative inline-block"
+        class="text-5xl md:text-6xl font-heading text-black mb-4 relative inline-block" 
+         appSlideInOnScroll animationClass="slide-in-bottom"
       >
-        OUR MENU
+        Menu's Top Picks
         <span
           class="absolute -bottom-2 left-0 w-full h-2 bg-yellow-400 transform -skew-x-12"
         ></span>
       </h2>
-      <p class="text-gray-400 mt-6 max-w-2xl mx-auto text-lg">
+      </span>
+      <p class="text-gray-700 mt-6 max-w-2xl mx-auto text-lg"
+      appSlideInOnScroll animationClass="slide-in-left">
         Street food classics elevated to a whole new level. Warning: Highly
         addictive.
       </p>
@@ -192,7 +124,9 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <div
         *ngFor="let item of menuItems; let i = index"
-        class="bg-olive-800 text-white rounded-lg overflow-hidden shadow-lg"
+        class="bg-olive-800 text-gray-700 rounded-lg overflow-hidden shadow-lg"
+
+        
       >
         <img
           [src]="item.image"
@@ -200,66 +134,17 @@
           class="w-full h-48 object-cover"
         />
         <div class="p-6">
-          <h3 class="text-2xl font-heading text-white mb-2">{{ item.name }}</h3>
+          <h3 class="text-2xl font-heading text-gray-700 mb-2">{{ item.name }}</h3>
           <p class="text-gray-400 mb-4">{{ item.description }}</p>
-          <span class="text-black font-bold text-lg">$ {{ item.price }}</span>
+          <span class="text-black font-bold text-lg">₱ {{ item.price }}</span>
+          <!-- Add to Cart Button --> <button (click)="addToCart(item)" class="mt-4 w-full bg-yellow-400 text-gray-900 font-semibold px-4 py-2 rounded-lg hover:bg-yellow-500 transition" > Add to Cart </button>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SECOND FEATURE SECTION (REVERSED) -->
-<!--
-<section class="bg-neutral-100 border-t border-gray-300">
-  <div class="w-full">
-    <div
-      class="grid grid-cols-1 lg:grid-cols-2 gap-0 h-80 sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[600px]"
-    >
-      
-      <div class="bg-slate-200 text-black flex items-center order-2 lg:order-1">
-        <div
-          class="m-6 sm:m-8 space-y-6 sm:space-y-8 w-full text-right ml-auto"
-        >
-          <h2
-            class="font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight"
-          >
-            <span class="block">Jargs Super Deluxe</span>
-            <span class="block text-lg sm:text-xl md:text-2xl lg:text-3xl">
-              A must try Jargs Super Deluxe
-            </span>
-          </h2>
 
-          <p
-            class="text-sm sm:text-base md:text-lg text-black max-w-lg ml-auto"
-          >
-            Grilled and made with love.
-            <span class="font-medium">All day.</span>
-          </p>
-
-          <div class="flex justify-end">
-            <button
-              routerLink="menu"
-              class="bg-amber-600 hover:bg-red-700 text-white font-medium px-4 py-2 rounded-full text-base shadow-lg hover:shadow-red-500/20 hover:scale-102 transition-all duration-200"
-            >
-              View all menu
-            </button>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="relative overflow-hidden h-full order-1 lg:order-2">
-        <img
-          src="/images/burger3.jpg"
-          alt="Burger close-up"
-          class="absolute inset-0 w-full h-full object-cover"
-        />
-      </div>
-    </div>
-  </div>
-</section>
--->
 <section id="how-to-order" class="py-24 bg-yellow-500 relative overflow-hidden">
   <!-- Background decoration -->
   <div
@@ -297,18 +182,14 @@
           <span class="text-3xl text-black">{{ step.icon }}</span>
         </div>
 
-        <div
-          class="absolute top-0 right-[calc(50%-3rem)] bg-red-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-heading font-bold border-2 border-gray-900"
-        >
-          {{ i + 1 }}
-        </div>
+       
 
         <h3
-          class="text-3xl font-heading text-white mb-3 group-hover:text-yellow-400 transition-colors"
+          class="text-3xl font-heading text-black mb-3 group-hover:text-yellow-400 transition-colors"
         >
           {{ step.title }}
         </h3>
-        <p class="text-gray-400 max-w-xs leading-relaxed">
+        <p class="text-gray-700 max-w-xs leading-relaxed">
           {{ step.desc }}
         </p>
       </div>

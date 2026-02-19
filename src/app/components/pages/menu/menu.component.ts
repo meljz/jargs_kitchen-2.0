@@ -6,6 +6,8 @@ import {
   Minus,
   ShoppingCart, 
 } from 'lucide-angular'
+//import { SlideInOnScrollDirective } from "../../../slide-in-on-scroll.directive";
+import { CartService } from '../../../services/cart.service';
 
 type Category = 'Burgers' | 'Sides' | 'Chicken'
 
@@ -22,12 +24,14 @@ interface MenuItem {
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [CommonModule, LucideAngularModule],
+  imports: [CommonModule, LucideAngularModule /*SlideInOnScrollDirective*/],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css'
 })
 export class MenuComponent {
   @Input() onNavigate!: (page: string) => void
+
+  constructor (private cartService: CartService) {}
 
   Plus = Plus
   Minus = Minus
@@ -100,7 +104,7 @@ export class MenuComponent {
     {
       id: 4,
       name: "Jarg's Cheese Burger",
-      description: 'Sautéed mushrooms, swiss cheese, truffle mayo',
+      description: 'Double patty, double cheese, bacon, caramelized onions',
       price: 11.99,
       category: 'Burgers',
       image:
@@ -137,7 +141,5 @@ export class MenuComponent {
     this.activeCategory = category
   }
 
-  addToCart() {
-    this.cartCount++
-  }
+ addToCart(item: any) { this.cartService.addToCart(item); }
 }

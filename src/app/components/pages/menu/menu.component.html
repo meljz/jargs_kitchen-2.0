@@ -2,14 +2,16 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
       <h2
-        class="text-5xl md:text-6xl font-heading text-black mb-4 relative inline-block"
+        class="text-5xl md:text-6xl font-heading text-black mb-4 relative inline-block animate-[slideInBottom_0.8s_ease-out_forwards]"
+     
+         
       >
         OUR MENU
         <span
-          class="absolute -bottom-2 left-0 w-full h-2 bg-yellow-400 transform -skew-x-12"
+          class="mt-2 absolute -bottom-2 left-0 w-full h-2 bg-yellow-400 transform -skew-x-12"
         ></span>
       </h2>
-      <p class="text-gray-400 mt-6 max-w-2xl mx-auto text-lg">
+      <p class="text-gray-700 mt-6 max-w-2xl mx-auto text-lg animate-[slideInBottom_0.8s_ease-out_forwards]">
         Street food classics elevated to a whole new level. Warning: Highly
         addictive.
       </p>
@@ -18,7 +20,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <div
         *ngFor="let item of MENU_ITEMS; let i = index"
-        class="bg-gray-800 rounded-lg overflow-hidden shadow-lg"
+        class="bg-neutral-100 rounded-lg overflow-hidden shadow-lg"
       >
         <img
           [src]="item.image"
@@ -26,97 +28,14 @@
           class="w-full h-48 object-cover"
         />
         <div class="p-6">
-          <h3 class="text-2xl font-heading text-white mb-2">{{ item.name }}</h3>
+          <h3 class="text-2xl font-heading text-gray-700 mb-2">{{ item.name }}</h3>
           <p class="text-gray-400 mb-4">{{ item.description }}</p>
-          <span class="text-yellow-400 font-bold text-lg"
-            >$ {{ item.price }}</span
+          <span class="text-gray-700 font-bold text-lg"
+            > ₱  {{ item.price }}</span
           >
+          <button (click)="addToCart(item)" class="mt-4 w-full bg-yellow-400 text-gray-900 font-semibold px-4 py-2 rounded-lg hover:bg-yellow-500 transition" > Add to Cart </button>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<!--<div class="min-h-screen bg-gray-50 pb-20">
-  <div
-    class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-4 gap-8"
-  >
-  
-    <aside
-      class="md:col-span-1 bg-white text-black rounded-xl shadow p-6 sticky top-24 h-fit"
-    >
-      <h2 class="text-lg font-semibold mb-4">Categories</h2>
-      <div
-        class="flex md:flex-col space-x-4 md:space-x-0 md:space-y-3 overflow-x-auto md:overflow-visible"
-      >
-        <button
-          *ngFor="let category of categories"
-          (click)="setCategory(category)"
-          class="text-base font-medium px-4 py-2 rounded-full transition-colors duration-200 w-full text-center"
-          [ngClass]="{
-            'bg-amber-500 text-white shadow': activeCategory === category,
-            'text-gray-600 hover:text-gray-900 hover:bg-gray-100':
-              activeCategory !== category,
-          }"
-        >
-          {{ category }}
-        </button>
-      </div>
-    </aside>
-
-    <main class="md:col-span-3">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-        <div
-          *ngFor="let item of filteredItems"
-          class="bg-white rounded-xl overflow-hidden shadow hover:shadow-md transition-transform duration-200"
-        >
-          <div class="relative h-56 overflow-hidden">
-            <img
-              [src]="item.image"
-              [alt]="item.name"
-              class="w-full h-full object-cover"
-            />
-            <div
-              *ngIf="item.popular"
-              class="absolute top-3 right-3 bg-amber-500 text-white text-[0.65rem] tracking-wide font-medium px-2.5 py-1 rounded-full uppercase shadow-sm"
-            >
-              Popular
-            </div>
-          </div>
-
-          <div class="p-5 space-y-2.5">
-            <div class="flex justify-between items-start">
-              <h3 class="text-lg font-semibold text-gray-900">
-                {{ item.name }}
-              </h3>
-              <span class="text-base font-medium text-amber-600"
-                >₱{{ item.price }}</span
-              >
-            </div>
-            <p class="text-gray-600 text-sm line-clamp-2">
-              {{ item.description }}
-            </p>
-            <button
-              class="w-full bg-amber-600 text-white py-2.5 rounded-md flex items-center justify-center gap-2 hover:bg-gray-800 transition-colors duration-200 text-sm font-medium"
-              (click)="addToCart()"
-            >
-              <lucide-icon [name]="Plus" class="h-4 w-4" />
-              Add to order
-            </button>
-          </div>
-        </div>
-      </div>
-    </main>
-  </div>
-
-
-  <div class="fixed bottom-6 right-6 z-40 md:hidden">
-    <button
-      class="bg-gray-900 text-white px-4 py-3 rounded-full shadow-lg flex items-center gap-2 hover:bg-gray-800 transition-colors duration-200 text-sm"
-    >
-      <lucide-icon [name]="ShoppingCart" class="h-5 w-5" />
-      <span class="font-medium">{{ cartCount }}</span>
-    </button>
-  </div>
-</div>
--->

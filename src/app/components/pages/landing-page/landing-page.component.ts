@@ -2,11 +2,14 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterModule } from '@angular/router';
 import { trigger, transition, style, animate } from '@angular/animations';
+import { SlideInOnScrollDirective } from '../../../slide-in-on-scroll.directive';
+
+
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, SlideInOnScrollDirective],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.css',
   animations: [
@@ -22,49 +25,32 @@ import { trigger, transition, style, animate } from '@angular/animations';
   ],
 })
 export class LandingPageComponent {
+
+  //cart
+  cart: any[] = [];
+
   menuItems = [
     {
-      name: 'Classic Smash',
-      price: '8.99',
+      name: "Jarg's Super Deluxe",
+      price: '99',
       description:
-        'Double smashed patty, melted american cheese, grilled onions, pickles, and our secret street sauce on a brioche bun.',
-      image: '/images/burger.jpg',
+        'Single patty, cheddar, lettuce, tomato, house sauce',
+      image: '/images/burger3.jpg',
     },
     {
-      name: 'Spicy Clucker',
-      price: '9.49',
+      name: 'Jargs Whole Chicken',
+      price: '230',
       description:
-        'Crispy buttermilk fried chicken thigh, spicy jalapeño slaw, sriracha mayo, and pickles.',
-      image: '/images/burger.jpg',
+        'Crispy chicken, jalapeños, spicy mayo, pepper jack',
+      image: '/images/chicken-menu.jpg',
     },
     {
-      name: 'Loaded Street Fries',
-      price: '5.99',
+      name: 'Jargs Cheese Burger',
+      price: '69',
       description:
-        'Crispy skin-on fries topped with liquid cheese gold, crispy bacon bits, spring onions, and ranch drizzle.',
+        'Double patty, double cheese, bacon, caramelized onions',
       image: '/images/burger.jpg',
-    },
-    {
-      name: 'BBQ Pulled Pork',
-      price: '10.99',
-      description:
-        '12-hour slow smoked pork shoulder, tangy house BBQ sauce, crunchy slaw, and pickled red onions.',
-      image: '/images/burger.jpg',
-    },
-    {
-      name: 'The Veggie Stack',
-      price: '8.49',
-      description:
-        'Grilled halloumi cheese, roasted red peppers, portobello mushroom, arugula, and pesto mayo.',
-      image: '/images/burger.jpg',
-    },
-    {
-      name: 'Killer Shake',
-      price: '4.99',
-      description:
-        'Extra thick hand-spun milkshake. Choose from: Vanilla Bean, Double Choc, or Strawberry Smash.',
-      image: '/images/burger.jpg',
-    },
+    }
   ];
 
   steps = [
@@ -84,4 +70,6 @@ export class LandingPageComponent {
       desc: 'Fresh food, delivered to your door or ready for pickup in minutes.',
     },
   ];
+
+  addToCart(item: any) { this.cart.push(item); console.log('Cart:', this.cart); }
 }
