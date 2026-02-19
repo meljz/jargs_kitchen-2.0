@@ -1,17 +1,62 @@
-<div class="min-h-screen bg-gray-50 pb-20">
-  <div class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+<section id="menu" class="py-24 bg-neutral-100 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2
+        class="text-5xl md:text-6xl font-heading text-black mb-4 relative inline-block"
+      >
+        OUR MENU
+        <span
+          class="absolute -bottom-2 left-0 w-full h-2 bg-yellow-400 transform -skew-x-12"
+        ></span>
+      </h2>
+      <p class="text-gray-400 mt-6 max-w-2xl mx-auto text-lg">
+        Street food classics elevated to a whole new level. Warning: Highly
+        addictive.
+      </p>
+    </div>
 
-    <!-- CATEGORY SIDEBAR -->
-    <aside class="md:col-span-1 bg-white text-black rounded-xl shadow p-6 sticky top-24 h-fit">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div
+        *ngFor="let item of MENU_ITEMS; let i = index"
+        class="bg-gray-800 rounded-lg overflow-hidden shadow-lg"
+      >
+        <img
+          [src]="item.image"
+          [alt]="item.name"
+          class="w-full h-48 object-cover"
+        />
+        <div class="p-6">
+          <h3 class="text-2xl font-heading text-white mb-2">{{ item.name }}</h3>
+          <p class="text-gray-400 mb-4">{{ item.description }}</p>
+          <span class="text-yellow-400 font-bold text-lg"
+            >$ {{ item.price }}</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--<div class="min-h-screen bg-gray-50 pb-20">
+  <div
+    class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-4 gap-8"
+  >
+  
+    <aside
+      class="md:col-span-1 bg-white text-black rounded-xl shadow p-6 sticky top-24 h-fit"
+    >
       <h2 class="text-lg font-semibold mb-4">Categories</h2>
-      <div class="flex md:flex-col space-x-4 md:space-x-0 md:space-y-3 overflow-x-auto md:overflow-visible">
+      <div
+        class="flex md:flex-col space-x-4 md:space-x-0 md:space-y-3 overflow-x-auto md:overflow-visible"
+      >
         <button
           *ngFor="let category of categories"
           (click)="setCategory(category)"
           class="text-base font-medium px-4 py-2 rounded-full transition-colors duration-200 w-full text-center"
           [ngClass]="{
             'bg-amber-500 text-white shadow': activeCategory === category,
-            'text-gray-600 hover:text-gray-900 hover:bg-gray-100': activeCategory !== category
+            'text-gray-600 hover:text-gray-900 hover:bg-gray-100':
+              activeCategory !== category,
           }"
         >
           {{ category }}
@@ -19,7 +64,6 @@
       </div>
     </aside>
 
-    <!-- MENU GRID -->
     <main class="md:col-span-3">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
         <div
@@ -42,10 +86,16 @@
 
           <div class="p-5 space-y-2.5">
             <div class="flex justify-between items-start">
-              <h3 class="text-lg font-semibold text-gray-900">{{ item.name }}</h3>
-              <span class="text-base font-medium text-amber-600">₱{{ item.price }}</span>
+              <h3 class="text-lg font-semibold text-gray-900">
+                {{ item.name }}
+              </h3>
+              <span class="text-base font-medium text-amber-600"
+                >₱{{ item.price }}</span
+              >
             </div>
-            <p class="text-gray-600 text-sm line-clamp-2">{{ item.description }}</p>
+            <p class="text-gray-600 text-sm line-clamp-2">
+              {{ item.description }}
+            </p>
             <button
               class="w-full bg-amber-600 text-white py-2.5 rounded-md flex items-center justify-center gap-2 hover:bg-gray-800 transition-colors duration-200 text-sm font-medium"
               (click)="addToCart()"
@@ -59,7 +109,7 @@
     </main>
   </div>
 
-  <!-- FLOATING CART (MOBILE) -->
+
   <div class="fixed bottom-6 right-6 z-40 md:hidden">
     <button
       class="bg-gray-900 text-white px-4 py-3 rounded-full shadow-lg flex items-center gap-2 hover:bg-gray-800 transition-colors duration-200 text-sm"
@@ -69,3 +119,4 @@
     </button>
   </div>
 </div>
+-->

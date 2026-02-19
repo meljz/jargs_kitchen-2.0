@@ -1,4 +1,85 @@
-<header id="hero" class="relative h-screen flex items-center justify-center overflow-hidden md:py-10 sm:h-[80vh] xs:h-[70vh]">
+<section
+  class="relative min-h-screen w-full flex flex-col md:flex-row bg-neutral-100 overflow-hidden pt-20 md:pt-0"
+>
+  <!-- Grunge Texture Overlay -->
+  <div
+    class="absolute inset-0 z-10 bg-gray-700 opacity-30 pointer-events-none mix-blend-overlay"
+  ></div>
+
+  <!-- Left Content -->
+  <div
+    class="relative z-20 w-full md:w-1/2 flex flex-col justify-center px-6 sm:px-12 lg:px-20 py-12 md:py-0 order-2 md:order-1"
+  >
+    <span
+      class="inline-block w-72 py-1 px-3 border border-yellow-600 text-yellow-600 font-heading tracking-widest text-lg mb-6 rounded"
+    >
+      EST. 2026 • Jargs Kitchen
+    </span>
+
+    <h1
+      class="text-6xl sm:text-7xl lg:text-8xl font-heading text-black leading-[0.9] mb-6"
+    >
+      BURGERS THAT <br />
+      <span
+        class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500"
+      >
+        HIT DIFFERENT
+      </span>
+    </h1>
+
+    <p
+      class="text-gray-400 text-lg sm:text-xl max-w-md mb-10 font-body leading-relaxed"
+    >
+      Handcrafted with love, served with attitude. The freshest ingredients, the
+      boldest flavors, right here on your block.
+    </p>
+
+    <div class="flex flex-wrap gap-4">
+      <button
+        class="bg-yellow-400 text-gray-900 font-heading text-xl px-8 py-4 rounded hover:bg-white transition-colors flex items-center gap-2 group"
+      >
+        ORDER NOW
+        <!-- Inline SVG for ArrowRight -->
+        <svg
+          class="w-5 h-5 group-hover:translate-x-1 transition-transform"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
+      </button>
+      <button
+        class="border-2 border-white/20 text-white font-heading text-xl px-8 py-4 rounded hover:bg-white/10 transition-colors"
+      >
+        VIEW MENU
+      </button>
+    </div>
+  </div>
+
+  <!-- Right Content -->
+  <div class="relative w-full md:w-1/2 h-[50vh] md:h-screen order-1 md:order-2">
+    <div
+      class="absolute inset-0 md:-ml-20 z-0 md:clip-path-diagonal w-full md:w-[calc(100%+5rem)] h-full"
+    >
+      <div class="absolute inset-0 bg-black/30 z-10 md:hidden"></div>
+      <img
+        src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=1200&q=80"
+        alt="Juicy Burger"
+        class="w-full h-full object-cover object-center"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent md:hidden z-20"
+      ></div>
+    </div>
+  </div>
+</section>
+<!--
+<header
+  id="hero"
+  class="relative h-screen flex items-center justify-center overflow-hidden md:py-10 sm:h-[80vh] xs:h-[70vh]"
+>
   <div class="absolute inset-0">
     <img
       src="/images/heroBurger.jpg"
@@ -10,13 +91,15 @@
   <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-end">
       <div class="space-y-4 sm:space-y-6 text-right max-w-lg ml-auto">
-        
-        <h1 class="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight">
+        <h1
+          class="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight"
+        >
           Crave the Ultimate Juicy Burger in Mabalacat City?
         </h1>
 
         <p class="text-lg sm:text-xl text-white leading-relaxed">
-          Taste one of the <strong class="text-amber-300">best handcrafted burgers</strong>
+          Taste one of the
+          <strong class="text-amber-300">best handcrafted burgers</strong>
           in Mabalacat City, Pampanga — fresh, juicy, and affordable.
         </p>
 
@@ -28,18 +111,19 @@
             Order Burger Now
           </a>
         </div>
-
       </div>
     </div>
   </div>
 </header>
-
-
+-->
 
 <!-- FEATURED BURGER SECTION -->
-<section class="bg-amber-500 border-t border-gray-300" aria-labelledby="best-seller">
+<!--
+<section
+  class="bg-amber-500 border-t border-gray-300"
+  aria-labelledby="best-seller"
+>
   <div class="grid grid-cols-1 lg:grid-cols-2 h-[600px] lg:h-[550px]">
-
     <div class="relative overflow-hidden">
       <img
         src="/images/burger.jpg"
@@ -59,8 +143,8 @@
         </h3>
 
         <p class="text-lg max-w-lg">
-          Freshly grilled, handcrafted daily using premium ingredients —
-          loved by locals in Mabalacat City.
+          Freshly grilled, handcrafted daily using premium ingredients — loved
+          by locals in Mabalacat City.
         </p>
 
         <a
@@ -71,15 +155,16 @@
         </a>
       </div>
     </div>
-
   </div>
 </section>
-
+-->
 
 <!-- DIVIDER -->
-<section class="bg-gray-900 py-20">
+<section class="bg-yellow-500 py-20">
   <div class="max-w-7xl mx-auto px-6">
-    <ul class="grid grid-cols-1 sm:grid-cols-3 gap-10 text-center text-white text-2xl font-medium">
+    <ul
+      class="grid grid-cols-1 sm:grid-cols-3 gap-10 text-center text-black text-2xl font-medium"
+    >
       <li>Tasty & Juicy Burgers</li>
       <li>Mabalacat City’s Favorite Burger Spot</li>
       <li>Affordable Prices</li>
@@ -87,48 +172,145 @@
   </div>
 </section>
 
+<section id="menu" class="py-24 bg-olive-200 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2
+        class="text-5xl md:text-6xl font-heading text-black mb-4 relative inline-block"
+      >
+        OUR MENU
+        <span
+          class="absolute -bottom-2 left-0 w-full h-2 bg-yellow-400 transform -skew-x-12"
+        ></span>
+      </h2>
+      <p class="text-gray-400 mt-6 max-w-2xl mx-auto text-lg">
+        Street food classics elevated to a whole new level. Warning: Highly
+        addictive.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div
+        *ngFor="let item of menuItems; let i = index"
+        class="bg-olive-800 text-white rounded-lg overflow-hidden shadow-lg"
+      >
+        <img
+          [src]="item.image"
+          [alt]="item.name"
+          class="w-full h-48 object-cover"
+        />
+        <div class="p-6">
+          <h3 class="text-2xl font-heading text-white mb-2">{{ item.name }}</h3>
+          <p class="text-gray-400 mb-4">{{ item.description }}</p>
+          <span class="text-black font-bold text-lg">$ {{ item.price }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- SECOND FEATURE SECTION (REVERSED) -->
-<!-- SECOND FEATURE SECTION (REVERSED) -->
+<!--
 <section class="bg-neutral-100 border-t border-gray-300">
   <div class="w-full">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 h-80 sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[600px]">
+    <div
+      class="grid grid-cols-1 lg:grid-cols-2 gap-0 h-80 sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[600px]"
+    >
       
-      <!-- TEXT COLUMN -->
       <div class="bg-slate-200 text-black flex items-center order-2 lg:order-1">
-        <div class="m-6 sm:m-8 space-y-6 sm:space-y-8 w-full text-right ml-auto">
-          <h2 class="font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight">
+        <div
+          class="m-6 sm:m-8 space-y-6 sm:space-y-8 w-full text-right ml-auto"
+        >
+          <h2
+            class="font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight"
+          >
             <span class="block">Jargs Super Deluxe</span>
             <span class="block text-lg sm:text-xl md:text-2xl lg:text-3xl">
               A must try Jargs Super Deluxe
             </span>
           </h2>
 
-          <p class="text-sm sm:text-base md:text-lg text-black max-w-lg ml-auto">
+          <p
+            class="text-sm sm:text-base md:text-lg text-black max-w-lg ml-auto"
+          >
             Grilled and made with love.
             <span class="font-medium">All day.</span>
           </p>
 
           <div class="flex justify-end">
             <button
-            routerLink="menu"
-            class="bg-amber-600 hover:bg-red-700 text-white font-medium px-4 py-2
-                   rounded-full text-base shadow-lg hover:shadow-red-500/20
-                   hover:scale-102 transition-all duration-200"
-          >
-            View all menu
-          </button>
+              routerLink="menu"
+              class="bg-amber-600 hover:bg-red-700 text-white font-medium px-4 py-2 rounded-full text-base shadow-lg hover:shadow-red-500/20 hover:scale-102 transition-all duration-200"
+            >
+              View all menu
+            </button>
           </div>
         </div>
       </div>
 
-      <!-- IMAGE COLUMN -->
+
       <div class="relative overflow-hidden h-full order-1 lg:order-2">
         <img
-        src="/images/burger3.jpg"
+          src="/images/burger3.jpg"
           alt="Burger close-up"
           class="absolute inset-0 w-full h-full object-cover"
         />
+      </div>
+    </div>
+  </div>
+</section>
+-->
+<section id="how-to-order" class="py-24 bg-yellow-500 relative overflow-hidden">
+  <!-- Background decoration -->
+  <div
+    class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none"
+  >
+    <div
+      class="absolute top-10 left-10 w-64 h-64 rounded-full bg-yellow-400 blur-3xl"
+    ></div>
+    <div
+      class="absolute bottom-10 right-10 w-64 h-64 rounded-full bg-red-500 blur-3xl"
+    ></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center mb-20">
+      <h2 class="text-5xl md:text-6xl font-heading text-black mb-4">
+        HOW TO ORDER
+      </h2>
+      <div class="w-24 h-1 bg-red-500 mx-auto"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+      <!-- Connecting line for desktop -->
+      <div
+        class="hidden md:block absolute top-12 left-[16%] right-[16%] h-0.5 border-t-2 border-dashed border-white/20 z-0"
+      ></div>
+
+      <div
+        *ngFor="let step of steps; let i = index"
+        class="relative z-10 flex flex-col items-center text-center group"
+      >
+        <div
+          class="w-24 h-24 rounded-full bg-gray-900 border-4 border-yellow-400 flex items-center justify-center mb-8 shadow-lg group-hover:scale-110 transition-transform duration-300"
+        >
+          <span class="text-3xl text-black">{{ step.icon }}</span>
+        </div>
+
+        <div
+          class="absolute top-0 right-[calc(50%-3rem)] bg-red-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-heading font-bold border-2 border-gray-900"
+        >
+          {{ i + 1 }}
+        </div>
+
+        <h3
+          class="text-3xl font-heading text-white mb-3 group-hover:text-yellow-400 transition-colors"
+        >
+          {{ step.title }}
+        </h3>
+        <p class="text-gray-400 max-w-xs leading-relaxed">
+          {{ step.desc }}
+        </p>
       </div>
     </div>
   </div>
