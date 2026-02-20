@@ -31,6 +31,27 @@ export const routes: Routes = [
           ),
       },
       {
+        path: 'faqs',
+        loadComponent: () =>
+          import('./components/pages/faqs-page/faqs-page.component').then(
+            (m) => m.FaqsPageComponent,
+          ),
+      },
+      {
+        path: 'blog',
+        loadComponent: () =>
+          import('./components/pages/blog-page/blog-page.component').then(
+            (m) => m.BlogPageComponent,
+          ),
+      },
+      {
+        path: 'blog/:slug',
+        loadComponent: () =>
+          import('./components/pages/blog-article/blog-article.component').then(
+            (m) => m.BlogArticlePageComponent,
+          ),
+      },
+      {
         path: 'contact',
         loadComponent: () =>
           import('./components/pages/contact/contact.component').then(

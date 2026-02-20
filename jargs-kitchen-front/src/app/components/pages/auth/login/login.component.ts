@@ -1,26 +1,36 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthService } from '../../../../services/auth.service'; // adjust path if needed
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { AuthService } from '../../../../services/auth.service';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, RouterLink],
+  imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
   email: string = '';
   password: string = '';
+  remember: boolean = false;
+  showPassword: boolean = false;
+  isLoading: boolean = false;
 
   constructor(
     private authService: AuthService,
     private router: Router,
   ) {}
 
+  togglePassword() {
+    this.showPassword = !this.showPassword;
+  }
+
   loginUser() {
+    if (!this.email || !this.password) return;
+
+    this.isLoading = true;
+
     const credentials = {
       email: this.email,
       password: this.password,
@@ -28,14 +38,15 @@ export class LoginComponent {
 
     this.authService.login(credentials).subscribe({
       next: (res) => {
-        console.log('Login success:', res);
         alert('Login successful!');
+        this.isLoading = false;
         this.authService.saveToken(res.token);
-        this.router.navigate(['/dashboard']); // redirect after login
+        this.router.navigate(['/dashboard']);
       },
       error: (err) => {
+        this.isLoading = false;
         alert('Login failed!');
-        console.error('Login failed:', err);
+        console.error(err);
       },
     });
   }

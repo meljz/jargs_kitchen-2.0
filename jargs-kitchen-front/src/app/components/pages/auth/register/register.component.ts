@@ -1,26 +1,53 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthService } from '../../../../services/auth.service'; // adjust path if needed
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { AuthService } from '../../../../services/auth.service';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [RouterLink, FormsModule],
+  imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
   name: string = '';
   email: string = '';
   password: string = '';
+  agreeTerms: boolean = false;
+
+  showPassword: boolean = false;
+  isLoading: boolean = false;
+
   constructor(
     private authService: AuthService,
     private router: Router,
   ) {}
 
+  togglePassword() {
+    this.showPassword = !this.showPassword;
+  }
+
+  get passwordRequirements() {
+    return [
+      {
+        label: 'At least 8 characters',
+        met: this.password.length >= 8,
+      },
+      {
+        label: 'Contains a number',
+        met: /\d/.test(this.password),
+      },
+      {
+        label: 'Contains uppercase',
+        met: /[A-Z]/.test(this.password),
+      },
+    ];
+  }
+
   registerUser() {
+    this.isLoading = true;
+
     const data = {
       name: this.name,
       email: this.email,
@@ -29,13 +56,14 @@ export class RegisterComponent {
 
     this.authService.register(data).subscribe({
       next: (res) => {
-        console.log('Registered:', res);
-        alert('Registered successfully!');
+        this.isLoading = false;
+        alert('Registration successful!');
         this.router.navigate(['/auth/login']);
       },
       error: (err) => {
+        this.isLoading = false;
         alert('Registration failed!');
-        console.error('Registration failed:', err);
+        console.error(err);
       },
     });
   }

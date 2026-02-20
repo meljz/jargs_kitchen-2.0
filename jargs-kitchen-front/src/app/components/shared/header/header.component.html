@@ -111,6 +111,20 @@
         About
       </li>
       <li
+        routerLink="blog"
+        routerLinkActive="text-yellow-400"
+        class="text-sm font-semibold cursor-pointer text-white hover:text-yellow-400 transition"
+      >
+        Blog
+      </li>
+      <li
+        routerLink="faqs"
+        routerLinkActive="text-yellow-400"
+        class="text-sm font-semibold cursor-pointer text-white hover:text-yellow-400 transition"
+      >
+        FAQs
+      </li>
+      <li
         routerLink="contact"
         routerLinkActive="text-yellow-400"
         class="text-sm font-semibold cursor-pointer text-white hover:text-yellow-400 transition"
@@ -119,29 +133,46 @@
       </li>
     </ul>
   </div>
+  <div class="hidden md:flex items-center gap-4 ml-6">
+    <span *ngIf="userName" class="text-yellow-400 text-xl font-semibold"
+      >Hello, {{ userName }}</span
+    >
+    <!-- existing buttons -->
+  </div>
 
   <!-- Actions (Right) -->
   <div class="hidden md:flex items-center gap-4 ml-6">
     <a
       routerLink="cart"
-      routerLinkActive="bg-red-600 text-white"
-      class="flex items-center gap-2 text-sm cursor-pointer text-white hover:text-yellow-400 px-4 py-2 rounded-lg transition"
+      routerLinkActive="bg-red-600 text-yellow-500"
+      *ngIf="isLoggedIn"
+      class="border border-yellow-400 text-sm cursor-pointer text-white hover:bg-yellow-400 px-4 py-2 rounded-lg transition"
     >
       🛒 Cart
     </a>
     <button
       routerLink="/auth/login"
-      routerLinkActive="bg-red-600 text-white"
-      class="border border-yellow-400 text-sm cursor-pointer text-white hover:bg-yellow-400 hover:text-gray-900 px-4 py-2 rounded-lg transition"
+      routerLinkActive="bg-red-600 text-yellow-500"
+      *ngIf="!isLoggedIn"
+      class="border border-yellow-400 text-sm cursor-pointer text-white hover:bg-yellow-400 px-4 py-2 rounded-lg transition"
     >
       Login
     </button>
     <button
       routerLink="/auth/signup"
       routerLinkActive="opacity-80"
+      *ngIf="!isLoggedIn"
       class="bg-red-500 text-sm text-white cursor-pointer px-4 py-2 rounded-lg hover:opacity-80 transition"
     >
       SignUp
+    </button>
+    <button
+      (click)="logoutUser()"
+      routerLinkActive="opacity-80"
+      *ngIf="isLoggedIn"
+      class="bg-red-500 text-sm text-white cursor-pointer px-4 py-2 rounded-lg hover:opacity-80 transition"
+    >
+      logout
     </button>
   </div>
 </nav>
