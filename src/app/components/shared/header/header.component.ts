@@ -8,7 +8,7 @@ import { RouterLink, RouterModule } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterLink, RouterModule],
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
   @Output() toggleCart = new EventEmitter<void>();
