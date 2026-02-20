@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   // Main pages (header/footer)
+  //test
   {
     path: '',
     loadComponent: () =>
